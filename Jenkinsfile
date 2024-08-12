@@ -100,10 +100,5 @@ pipeline {
         failure {
             echo 'Pipeline failed.'
         }
-        always {
-            script {
-                cleanWs()
-            }
-        }
     }
 }
