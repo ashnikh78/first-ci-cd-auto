@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         NODEJS_HOME = tool name: 'NodeJS', type: 'NodeJSInstallation'
-        PATH = "${NODEJS_HOME}/bin:${env.PATH}"
+        PATH = "D:\software\nodejs:${env.PATH}"
         IMAGE_NAME = 'first-ci-cd-auto'
         IMAGE_TAG = 'latest'
     }
@@ -99,6 +99,9 @@ pipeline {
         }
         failure {
             echo 'Pipeline failed.'
+        }
+        always {
+            cleanWs()
         }
     }
 }
