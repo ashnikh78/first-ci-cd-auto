@@ -3,9 +3,10 @@ pipeline {
 
     environment {
         NODEJS_HOME = tool name: 'NodeJS', type: 'NodeJSInstallation'
-        PATH = "D:\software\nodejs:${env.PATH}"
+        PATH = "${NODEJS_HOME}/bin:${env.PATH}"
         IMAGE_NAME = 'first-ci-cd-auto'
         IMAGE_TAG = 'latest'
+        // No need to manually specify the path for NodeJS if configured correctly
     }
 
     stages {
