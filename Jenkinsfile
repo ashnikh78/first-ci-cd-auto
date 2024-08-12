@@ -101,7 +101,9 @@ pipeline {
             echo 'Pipeline failed.'
         }
         always {
-            cleanWs()
+            script {
+                cleanWs()
+            }
         }
     }
 }
